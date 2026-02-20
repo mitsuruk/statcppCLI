@@ -1,0 +1,10 @@
+{
+    "command": "ci.sample-size",
+    "input": {
+        "level": 0.95,
+        "moe": 0.03
+    },
+    "result": {
+        "Sample Size": 1068.0
+    }
+}

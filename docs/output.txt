@@ -1,0 +1,169 @@
+
+statcpp CLI Reference Verification
+binary: /Users/mitsuruk/devs/@Projects/@Stat/statcppCLI/build/statcpp
+
+== desc ==
+  PASS  desc summary
+  PASS  desc mean
+  PASS  desc median
+  PASS  desc mode
+  PASS  desc var
+  PASS  desc sd
+  PASS  desc range
+  PASS  desc iqr
+  PASS  desc cv
+  PASS  desc skewness
+  PASS  desc kurtosis
+  PASS  desc percentile (p=0.95)
+  PASS  desc quartiles
+  PASS  desc five-number
+  PASS  desc gmean
+  PASS  desc hmean
+  PASS  desc trimmed-mean
+
+== test ==
+  PASS  test t (1-sample)
+  PASS  test t (2-sample)
+  PASS  test welch
+  PASS  test z
+  PASS  test f
+  PASS  test shapiro
+  PASS  test ks
+  PASS  test mann-whitney
+  PASS  test wilcoxon
+  PASS  test kruskal
+  PASS  test levene
+  PASS  test bartlett
+  PASS  test chisq
+
+== corr ==
+  PASS  corr pearson
+  PASS  corr spearman
+  PASS  corr kendall
+  PASS  corr cov
+  PASS  corr matrix
+
+== effect ==
+  PASS  effect cohens-d
+  PASS  effect hedges-g
+  PASS  effect glass-delta
+  PASS  effect cohens-h
+  PASS  effect odds-ratio
+  PASS  effect risk-ratio
+
+== ci ==
+  PASS  ci mean
+  PASS  ci diff
+  PASS  ci prop
+  PASS  ci var
+  PASS  ci sample-size
+
+== reg ==
+  PASS  reg simple
+  PASS  reg multiple
+  PASS  reg predict
+  PASS  reg residuals
+  PASS  reg vif
+
+== anova ==
+  PASS  anova oneway
+  PASS  anova posthoc-tukey
+  PASS  anova posthoc-bonferroni
+  PASS  anova posthoc-scheffe
+  PASS  anova eta-squared
+
+== resample ==
+  PASS  resample bootstrap-mean
+  PASS  resample bootstrap-median
+  PASS  resample bootstrap-sd
+  PASS  resample bca
+  PASS  resample permtest
+  PASS  resample permtest-corr
+
+== ts ==
+  PASS  ts acf
+  PASS  ts pacf
+  PASS  ts ma
+  PASS  ts ema
+  PASS  ts diff
+  PASS  ts mae
+  PASS  ts rmse
+  PASS  ts mape
+
+== robust ==
+  PASS  robust mad
+  PASS  robust outliers
+  PASS  robust outliers-zscore
+  PASS  robust outliers-modified
+  PASS  robust winsorize
+  PASS  robust hodges-lehmann
+  PASS  robust biweight
+
+== survival ==
+  PASS  survival kaplan-meier
+  PASS  survival logrank
+  PASS  survival nelson-aalen
+
+== cluster ==
+  PASS  cluster kmeans
+  PASS  cluster hierarchical
+  PASS  cluster silhouette
+
+== multiple ==
+  PASS  multiple bonferroni
+  PASS  multiple holm
+  PASS  multiple bh
+
+== power ==
+  PASS  power t-one (power)
+  PASS  power t-one (sample-size)
+  PASS  power t-two (power)
+  PASS  power t-two (sample-size)
+  PASS  power prop (power)
+  PASS  power prop (sample-size)
+
+== glm ==
+  PASS  glm logistic
+  PASS  glm poisson
+
+== model ==
+  PASS  model aic
+  PASS  model cv
+  PASS  model ridge
+  PASS  model lasso
+
+== output modes ==
+  PASS  JSON desc summary
+  PASS  JSON test t
+  PASS  JSON corr pearson
+  PASS  JSON effect cohens-d
+  PASS  JSON effect cohens-h
+  PASS  JSON ci mean
+  PASS  JSON ci prop
+  PASS  JSON ci sample-size
+  PASS  JSON reg simple
+  PASS  JSON anova oneway
+  PASS  JSON ts diff
+  PASS  JSON robust mad
+  PASS  JSON survival kaplan-meier
+  PASS  JSON multiple bonferroni
+  PASS  JSON power t-one
+  PASS  Quiet output (--quiet)
+  PASS  stdin pipe input
+  PASS  --row comma separated
+  PASS  --row space separated
+
+== shortcuts ==
+  PASS  shortcut: mean
+  PASS  shortcut: median
+  PASS  shortcut: sd
+  PASS  shortcut: var
+  PASS  shortcut: summary
+  PASS  shortcut: ttest
+  PASS  shortcut: pearson
+  PASS  shortcut: spearman
+  PASS  shortcut: kendall
+
+===========================================
+Results: PASS: 126  FAIL: 0  SKIP: 0  TOTAL: 126
+===========================================

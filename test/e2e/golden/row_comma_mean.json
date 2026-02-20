@@ -1,0 +1,10 @@
+{
+    "command": "desc.mean",
+    "input": {
+        "column": "col1",
+        "n": 5
+    },
+    "result": {
+        "Mean": 3.0
+    }
+}

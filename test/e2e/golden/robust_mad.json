@@ -1,0 +1,11 @@
+{
+    "command": "robust.mad",
+    "input": {
+        "column": "group1",
+        "n": 8
+    },
+    "result": {
+        "MAD": 2.0,
+        "MAD scaled": 2.9652
+    }
+}

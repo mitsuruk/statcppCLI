@@ -1,0 +1,11 @@
+  ANOVA Table:
+  Source        SS          df      MS          F           p-value
+  Between       150.062     1       150.062     22.8667     0.000292342
+  Within        91.875      14      6.5625      0           0
+  Total         241.938     15
+
+  F-statistic:  22.8667
+  p-value:      0.000292342
+  eta-squared:  0.620253
+  omega-squared:0.577465
+  Reject H0 (alpha=0.05)

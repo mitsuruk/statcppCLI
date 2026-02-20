@@ -1,0 +1,17 @@
+{
+    "command": "anova.oneway",
+    "input": {
+        "columns": [
+            "group1",
+            "group2"
+        ],
+        "k": 2,
+        "n": 16
+    },
+    "result": {
+        "F-statistic": 22.866666666666667,
+        "eta-squared": 0.620253164556962,
+        "omega-squared": 0.5774647887323944,
+        "p-value": 0.00029234175805814555
+    }
+}

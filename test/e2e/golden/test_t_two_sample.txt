@@ -1,0 +1,5 @@
+  Statistic:    -4.78191
+  df:           14
+  p-value:      0.000292342
+  alpha:        0.05
+  Reject H0

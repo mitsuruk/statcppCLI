@@ -1,0 +1,10 @@
+{
+    "command": "effect.cohens-h",
+    "input": {
+        "p1": 0.6,
+        "p2": 0.4
+    },
+    "result": {
+        "Cohen's h": 0.40271584158066154
+    }
+}

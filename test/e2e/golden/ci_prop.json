@@ -1,0 +1,13 @@
+{
+    "command": "ci.prop",
+    "input": {
+        "successes": 45,
+        "trials": 100
+    },
+    "result": {
+        "Estimate": 0.45,
+        "Level": 0.95,
+        "Lower": 0.3561453797236467,
+        "Upper": 0.5475539701027973
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "command": "ci.mean",
+    "input": {
+        "column": "group1",
+        "n": 8
+    },
+    "result": {
+        "Estimate": 24.5,
+        "Level": 0.95,
+        "Lower": 22.452175328624975,
+        "Upper": 26.547824671375025
+    }
+}

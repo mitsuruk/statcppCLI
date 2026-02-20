@@ -1,0 +1,50 @@
+# VSCode
+**/.vscode/
+**/.cache/
+**/.cmake/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# CMake
+**/build/
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+
+# logs
+*.log
+*.logs
+*.LOG
+*.LOGS
+
+# download (auto-downloaded dependencies)
+**/download/
+
+# clangd
+compile_commands.json

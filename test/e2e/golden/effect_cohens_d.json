@@ -1,0 +1,14 @@
+{
+    "command": "effect.cohens-d",
+    "input": {
+        "columns": [
+            "group1",
+            "group2"
+        ],
+        "n1": 8,
+        "n2": 8
+    },
+    "result": {
+        "Cohen's d": -2.3909551787239063
+    }
+}

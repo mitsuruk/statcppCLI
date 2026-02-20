@@ -1,0 +1,17 @@
+{
+    "command": "test.t",
+    "input": {
+        "columns": [
+            "group1",
+            "group2"
+        ],
+        "n1": 8,
+        "n2": 8
+    },
+    "result": {
+        "Statistic": -4.781910357447813,
+        "alpha": 0.05,
+        "df": 14.0,
+        "p-value": 0.00029234175805803453
+    }
+}

@@ -1,0 +1,2 @@
+  Cohen's d:    -2.39096
+  Interpretation: large
