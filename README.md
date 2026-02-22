@@ -1,5 +1,7 @@
 # statcpp CLI
 
+[![CI](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml/badge.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
+
 **Bring statistics to your UNIX pipeline.**
 
 [日本語版 / Japanese](README-ja.md)
