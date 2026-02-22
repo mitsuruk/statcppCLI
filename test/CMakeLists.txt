@@ -40,9 +40,18 @@ target_compile_features(${TEST_TARGET_NAME} PRIVATE cxx_std_17)
 target_include_directories(${TEST_TARGET_NAME} PRIVATE ${REPO_ROOT}/src/include)
 
 # 依存ヘッダのインクルードパス（独立ビルド時）
-# cmake/*.cmake は ${PROJECT_NAME} に対して設定するため、
-# 独立ビルド時は依存のダウンロード・設定を直接行う
 if(STANDALONE_TEST)
+    # statcpp（csv_reader.hpp が依存）
+    # CI では STATCPP_INCLUDE_DIR を外部から渡す
+    if(DEFINED STATCPP_INCLUDE_DIR)
+        target_include_directories(${TEST_TARGET_NAME} PRIVATE ${STATCPP_INCLUDE_DIR})
+    elseif(EXISTS ${REPO_ROOT}/download/statcpp/statcpp-install/include)
+        target_include_directories(${TEST_TARGET_NAME} PRIVATE
+            ${REPO_ROOT}/download/statcpp/statcpp-install/include)
+    else()
+        message(FATAL_ERROR "statcpp headers not found. Set -DSTATCPP_INCLUDE_DIR=<path>")
+    endif()
+
     # nlohmann-json（output_formatter.hpp が依存）
     set(NLOHMANN_JSON_DOWNLOAD_DIR ${REPO_ROOT}/download/nlohmann-json)
     set(NLOHMANN_JSON_INSTALL_DIR ${NLOHMANN_JSON_DOWNLOAD_DIR}/nlohmann-json-install)

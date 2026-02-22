@@ -31,6 +31,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout statcpp
+        uses: actions/checkout@v4
+        with:
+          repository: mitsuruk/statcpp
+          path: _deps/statcpp
+
       - name: Install GoogleTest (Ubuntu)
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y libgtest-dev
@@ -43,7 +49,8 @@ jobs:
         run: |
           cmake -B build -S test \
             -DCMAKE_CXX_COMPILER=${{ matrix.cxx }} \
-            -DCMAKE_C_COMPILER=${{ matrix.cc }}
+            -DCMAKE_C_COMPILER=${{ matrix.cc }} \
+            -DSTATCPP_INCLUDE_DIR=${{ github.workspace }}/_deps/statcpp/include
         env:
           CC: ${{ matrix.cc }}
           CXX: ${{ matrix.cxx }}
