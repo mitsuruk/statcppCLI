@@ -346,7 +346,7 @@ statcpp test shapiro test/e2e/data/two_groups.csv --col group1
 
 ### ks
 
-Kolmogorov-Smirnov test for normality.
+Lilliefors test for normality. This is a Lilliefors test (not a standard KS test) because the mean and variance are estimated from the data.
 
 ```bash
 statcpp test ks test/e2e/data/two_groups.csv --col group1

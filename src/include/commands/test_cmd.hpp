@@ -4,7 +4,7 @@
  *
  * Provides the CLI entry point for running a variety of statistical tests:
  * t-test (one-sample, two-sample, paired), Welch's t-test, z-test, F-test,
- * Shapiro-Wilk normality test, Kolmogorov-Smirnov test, Mann-Whitney U test,
+ * Shapiro-Wilk normality test, Lilliefors test, Mann-Whitney U test,
  * Wilcoxon signed-rank test, Kruskal-Wallis test, Levene's test,
  * Bartlett's test, and Chi-square goodness-of-fit test.
  */
@@ -90,7 +90,7 @@ inline void print_test_result(OutputFormatter& fmt, const statcpp::test_result& 
  * | @c z             | z-test (known population standard deviation)         |
  * | @c f             | F-test for equality of two variances                 |
  * | @c shapiro       | Shapiro-Wilk normality test                          |
- * | @c ks            | Kolmogorov-Smirnov test against the normal distribution |
+ * | @c ks            | Lilliefors test for normality                         |
  * | @c mann-whitney  | Mann-Whitney U test                                  |
  * | @c wilcoxon      | Wilcoxon signed-rank test (one-sample / paired)      |
  * | @c kruskal       | Kruskal-Wallis H test                                |
@@ -179,10 +179,10 @@ inline int run_test(const ParsedCommand& cmd, CsvData& csv, OutputFormatter& fmt
 
     } else if (cmd.command == "ks") {
         if (cols.empty()) {
-            throw std::runtime_error("KS test requires --col");
+            throw std::runtime_error("Lilliefors test requires --col");
         }
         auto data = csv.get_clean_data(cols[0], FLAGS_fail_na);
-        auto r = statcpp::ks_test_normal(data.begin(), data.end());
+        auto r = statcpp::lilliefors_test(data.begin(), data.end());
         fmt.set_input_info({{"column", cols[0]}, {"n", data.size()}});
         print_test_result(fmt, r, FLAGS_alpha);
 

@@ -346,7 +346,7 @@ statcpp test shapiro test/e2e/data/two_groups.csv --col group1
 
 ### ks
 
-Kolmogorov-Smirnov 正規性検定。
+Lilliefors 正規性検定。平均と分散をデータから推定するため、既知パラメータの標準 KS 検定ではなく Lilliefors 検定となる。
 
 ```bash
 statcpp test ks test/e2e/data/two_groups.csv --col group1

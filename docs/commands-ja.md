@@ -119,7 +119,7 @@ statcpp desc trimmed-mean test/e2e/data/basic.csv --col value --trim 0.1
 | `z` | 1列 | `--sigma` | `--mu0`, `--alternative` | z 検定（既知の母標準偏差が必要） |
 | `f` | 2列 | | `--alternative` | F 検定（等分散の検定） |
 | `shapiro` | 1列 | | | Shapiro-Wilk 正規性検定 |
-| `ks` | 1列 | | | Kolmogorov-Smirnov 正規性検定 |
+| `ks` | 1列 | | | Lilliefors 正規性検定 |
 | `mann-whitney` | 2列 | | `--alternative` | Mann-Whitney U 検定 |
 | `wilcoxon` | 1列 or 2列 | | `--mu0`, `--alternative` | Wilcoxon 符号順位検定（1列=1標本, 2列=対応あり） |
 | `kruskal` | 2列以上 | | | Kruskal-Wallis 検定 |

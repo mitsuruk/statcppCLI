@@ -119,7 +119,7 @@ You can specify `--alternative` (`two-sided` / `less` / `greater`) and `--alpha`
 | `z` | 1 column | `--sigma` | `--mu0`, `--alternative` | z-test (requires known population standard deviation) |
 | `f` | 2 columns | | `--alternative` | F-test (test for equality of variances) |
 | `shapiro` | 1 column | | | Shapiro-Wilk normality test |
-| `ks` | 1 column | | | Kolmogorov-Smirnov normality test |
+| `ks` | 1 column | | | Lilliefors normality test |
 | `mann-whitney` | 2 columns | | `--alternative` | Mann-Whitney U test |
 | `wilcoxon` | 1 or 2 columns | | `--mu0`, `--alternative` | Wilcoxon signed-rank test (1 column = one-sample, 2 columns = paired) |
 | `kruskal` | 2+ columns | | | Kruskal-Wallis test |
