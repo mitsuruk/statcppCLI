@@ -1,6 +1,11 @@
 # statcpp CLI
 
 [![CI](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml/badge.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://mitsuruk.github.io/statcppCLI/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/tests-49%20e2e-brightgreen.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
 
 **Bring statistics to your UNIX pipeline.**
 

@@ -1,0 +1,31 @@
+site_name: statcppCLI
+site_description: Command-line statistics tool built on the C++17 header-only statistics library statcpp
+site_url: https://mitsuruk.github.io/statcppCLI/
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: teal
+    accent: teal
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+nav:
+  - English:
+      - Command Reference: commands.md
+      - Design Guide: design.md
+      - Test Reference: test-reference.md
+      - Changelog: CHANGELOG.md
+  - 日本語:
+      - コマンドリファレンス: commands-ja.md
+      - 設計ガイド: design-ja.md
+      - テストリファレンス: test-reference-ja.md
+      - 変更履歴: CHANGELOG.md
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - codehilite

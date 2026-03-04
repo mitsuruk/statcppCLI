@@ -2,6 +2,7 @@
 **/.vscode/
 **/.cache/
 **/.cmake/
+*.code-workspace
 
 # macOS
 .DS_Store
@@ -24,6 +25,7 @@ Temporary Items
 
 # CMake
 **/build/
+**/build-ja/
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -43,8 +45,76 @@ CMakeUserPresets.json
 *.LOG
 *.LOGS
 
-# download (auto-downloaded dependencies)
+# Backup files
+*.bak
+*.BAK
+*~
+*.swp
+*.swo
+
+# Downloaded dependencies
 **/download/
 
-# clangd
-compile_commands.json
+# Python related (including VSCode extensions)
+**/__pycache__/
+**/*.py[cod]
+**/*.ipynb_checkpoints/
+
+# R
+.RData
+.Rhistory
+
+# Object files and binaries
+*.dSYM/
+*.o
+*.a
+*.so
+*.dylib
+*.out
+*.dll
+*.exe
+
+# Coverage
+*.gcda
+*.gcno
+
+# Xcode (macOS environment)
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj
+
+# Other IDEs
+.idea/
+
+# Doxygen output
+doxydocs/
+
+# MkDocs output
+site/
+
+# ctags/tags related
+tags
+TAGS
+
+# Secrets and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.token
+*.secret
+*.keystore
+*.jks
+.env
+.env.*
+credentials.json
+id_rsa
+id_ed25519
+id_ecdsa
+.aws/
+gcloud/
+
+# Misc
+.markdownlint.json
