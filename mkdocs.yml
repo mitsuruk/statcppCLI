@@ -14,6 +14,7 @@ theme:
     - content.code.copy
 
 nav:
+  - Home: index.md
   - English:
       - Command Reference: commands.md
       - Design Guide: design.md
