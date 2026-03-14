@@ -1,0 +1,16 @@
+{
+    "command": "multiple.bonferroni",
+    "input": {
+        "alpha": 0.05,
+        "column": "pvalue",
+        "n_tests": 5
+    },
+    "result": {
+        "Adjusted alpha": 0.01,
+        "p1 adjusted": 0.005,
+        "p2 adjusted": 0.065,
+        "p3 adjusted": 0.2,
+        "p4 adjusted": 0.3,
+        "p5 adjusted": 1.0
+    }
+}

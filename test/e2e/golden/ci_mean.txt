@@ -1,0 +1,4 @@
+  Estimate:     24.5
+  Lower:        22.4522
+  Upper:        26.5478
+  Level:        0.95

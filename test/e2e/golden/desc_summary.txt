@@ -1,0 +1,10 @@
+  Count:        5
+  Mean:         30
+  Std Dev:      15.8114
+  Min:          10
+  Q1:           20
+  Median:       30
+  Q3:           40
+  Max:          50
+  Skewness:     0
+  Kurtosis:     -1.2

@@ -1,0 +1,10 @@
+  Kaplan-Meier Survival Estimates:
+  Time      Survival    SE        At Risk   Events    Censored
+  0         1           0         8         0         0
+  1         0.875       0.116927  8         1         0
+  3         0.729167    0.164976  6         1         0
+  4         0.583333    0.185561  5         1         0
+  6         0.388889    0.201269  3         1         0
+  7         0.194444    0.170387  2         1         0
+
+  Median survival: 6

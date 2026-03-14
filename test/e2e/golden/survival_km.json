@@ -1,0 +1,12 @@
+{
+    "command": "survival.kaplan-meier",
+    "input": {
+        "event": "event",
+        "n": 8,
+        "time": "time"
+    },
+    "result": {
+        "Median survival": 6.0,
+        "N events": 5.0
+    }
+}

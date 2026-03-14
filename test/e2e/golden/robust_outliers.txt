@@ -1,0 +1,6 @@
+  Q1:           20
+  Q3:           40
+  IQR:          20
+  Lower fence:  -10
+  Upper fence:  70
+  N outliers:   0

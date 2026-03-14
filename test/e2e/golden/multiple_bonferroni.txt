@@ -1,0 +1,9 @@
+  Bonferroni Correction:
+  Adjusted alpha:0.01
+
+  Test    p-value     Adj. p-value  Sig?
+  1       0.001       0.005         Yes
+  2       0.013       0.065         No
+  3       0.04        0.2           No
+  4       0.06        0.3           No
+  5       0.5         1             No

@@ -1,0 +1,19 @@
+{
+    "command": "desc.summary",
+    "input": {
+        "column": "value",
+        "n": 5
+    },
+    "result": {
+        "Count": 5.0,
+        "Kurtosis": -1.2000000000000002,
+        "Max": 50.0,
+        "Mean": 30.0,
+        "Median": 30.0,
+        "Min": 10.0,
+        "Q1": 20.0,
+        "Q3": 40.0,
+        "Skewness": 0.0,
+        "Std Dev": 15.811388300841896
+    }
+}

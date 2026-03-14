@@ -1,0 +1,12 @@
+  Intercept:    5.83333
+  Slope:        1.0119
+  R-squared:    0.862275
+  Adj R-squared:0.839321
+  Residual SE:  1.06997
+  F-statistic:  37.565
+  F p-value:    0.000862397
+
+  Coefficients:
+                Estimate    Std.Error   t-value     p-value
+  Intercept     5.83333     4.06261     1.43586     0.201058
+  Slope         1.0119      0.1651      6.12903     0.000862397

@@ -1,0 +1,17 @@
+{
+    "command": "reg.simple",
+    "input": {
+        "n": 8,
+        "x": "group1",
+        "y": "group2"
+    },
+    "result": {
+        "Adj R-squared": 0.8393205235310498,
+        "F p-value": 0.0008623966761827084,
+        "F-statistic": 37.56499133448873,
+        "Intercept": 5.833333333333334,
+        "R-squared": 0.8622747344551855,
+        "Residual SE": 1.0699725556486344,
+        "Slope": 1.0119047619047619
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "command": "corr.pearson",
+    "input": {
+        "columns": [
+            "group1",
+            "group2"
+        ],
+        "n": 8
+    },
+    "result": {
+        "r": 0.9285874942379881
+    }
+}
