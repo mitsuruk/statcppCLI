@@ -322,7 +322,7 @@ public:
                 if (f.empty()) continue;
                 try {
                     std::size_t pos;
-                    std::stod(f, &pos);
+                    (void)std::stod(f, &pos);
                     if (pos != f.size()) all_numeric = false;
                 } catch (...) {
                     all_numeric = false;

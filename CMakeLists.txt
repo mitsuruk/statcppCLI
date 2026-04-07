@@ -173,10 +173,14 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
 
-# Build-type flags
+# Build-type flags (MSVC と GCC/Clang で分岐)
 target_compile_options(${PROJECT_NAME} PRIVATE
-    $<$<CONFIG:Release>:-O2 -Wall -funroll-loops>
-    $<$<CONFIG:Debug>:-g -O0 -Wall>
+    # Release
+    $<$<AND:$<CONFIG:Release>,$<CXX_COMPILER_ID:MSVC>>:/O2 /W4>
+    $<$<AND:$<CONFIG:Release>,$<NOT:$<CXX_COMPILER_ID:MSVC>>>:-O2 -Wall -funroll-loops>
+    # Debug
+    $<$<AND:$<CONFIG:Debug>,$<CXX_COMPILER_ID:MSVC>>:/Od /Zi /W4>
+    $<$<AND:$<CONFIG:Debug>,$<NOT:$<CXX_COMPILER_ID:MSVC>>>:-g -O0 -Wall>
 )
 
 # Add compile definitions to a target.
@@ -190,8 +194,17 @@ target_compile_definitions(${PROJECT_NAME}
 message(STATUS "===============================================================")
 message(STATUS "CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 
-# Encoding options
-target_compile_options(${PROJECT_NAME} PRIVATE -finput-charset=UTF-8 -fexec-charset=UTF-8)
+# Encoding options (MSVC: /utf-8, GCC/Clang: -finput-charset/-fexec-charset)
+target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/utf-8>
+    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-finput-charset=UTF-8 -fexec-charset=UTF-8>
+)
+
+# MSVC: statcpp の clustering.hpp で発生する C4701 を抑制
+# (statcpp 内部が "..." 形式でインクルードするため /external:anglebrackets が効かない)
+target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/wd4701>
+)
 
 # ----------------------------
 # Sanitizers (opt-in: -DSANI=true)
@@ -242,12 +255,15 @@ endif()
 # (Some commands are clangd specific)
 # ----------------------------
 # copy compile_commands.json back to source tree
-add_custom_command(
-    TARGET ${PROJECT_NAME}
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
-    COMMENT "Copying compile_commands.json to source directory"
-)
+# (Visual Studio ジェネレータは compile_commands.json を生成しないためスキップ)
+if(NOT CMAKE_GENERATOR MATCHES "Visual Studio")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
+        COMMENT "Copying compile_commands.json to source directory"
+    )
+endif()
 
 # remove clangd cache files.
 add_custom_command(

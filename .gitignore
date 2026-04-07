@@ -87,7 +87,7 @@ CMakeUserPresets.json
 .idea/
 
 # Doxygen output
-doc/
+doxydocs/
 
 # MkDocs output
 site/
@@ -122,3 +122,6 @@ data/
 
 # Misc
 .markdownlint.json
+
+# Serena
+.serena/

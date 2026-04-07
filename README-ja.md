@@ -4,10 +4,11 @@
 [![Docs](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://mitsuruk.github.io/statcppCLI/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
-[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/tests-49%20e2e-brightgreen.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
 
 **UNIX パイプラインに統計学を持ち込む。**
+*Windows (MSVC / MinGW) でも動作します*
 
 [English](README.md)
 
@@ -34,6 +35,17 @@ cmake -B build && cmake --build build
 
 ビルド済みバイナリ: `build/statcpp`
 
+**Windows (MSVC):**
+
+```bat
+git clone <repository-url>
+cd statcppCLI
+cmake -S . -B build
+cmake --build build --config Release
+```
+
+ビルド済みバイナリ: `build\Release\statcpp.exe`
+
 ### インストール
 
 ```bash
@@ -44,10 +56,16 @@ sudo cmake --install build
 cmake --install build --prefix ~/.local
 ```
 
+**Windows:**
+
+```bat
+cmake --install build --config Release --prefix C:\Users\<user>\AppData\Local\statcpp
+```
+
 ### 前提条件
 
 - CMake 3.20+
-- C++17 対応コンパイラ (GCC 9+, Clang 10+, Apple Clang 12+)
+- C++17 対応コンパイラ (GCC 9+, Clang 10+, Apple Clang 12+, MSVC 2019+)
 
 statcpp, gflags, nlohmann/json は CMake が自動でダウンロードします。
 
@@ -137,10 +155,10 @@ $ statcpp desc summary data.csv --col value
 # 単体テスト
 cmake -B build -DGTEST=true && cmake --build build && ctest --test-dir build --verbose
 
-# E2E テスト
+# E2E テスト (macOS / Linux のみ)
 cd test/e2e && bash run_e2e.sh
 
-# リファレンス全例の検証
+# リファレンス全例の検証 (macOS / Linux のみ)
 bash docs/run_reference.sh
 ```
 
@@ -149,6 +167,7 @@ bash docs/run_reference.sh
 - macOS + Apple Clang 17.0.0
 - macOS + GCC 15 (Homebrew)
 - Ubuntu 24.04 ARM64 + GCC 13.3.0
+- Windows 11 ARM64 + MSVC 2022 (Parallels 経由)
 
 ## ライセンス
 

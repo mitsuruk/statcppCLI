@@ -1,6 +1,7 @@
 # statcpp CLI
 
 **Bring statistics to your UNIX pipeline.**
+*Also runs on Windows (MSVC / MinGW)*
 
 ## Overview
 

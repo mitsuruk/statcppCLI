@@ -3,6 +3,7 @@
 ## Concept
 
 **Bring statistics to the UNIX pipeline.**
+*Also runs on Windows (MSVC / MinGW)*
 
 Just as `awk` handles text processing and `jq` handles JSON processing, `statcpp` handles statistical processing.
 A single binary, zero dependencies, fast startup — a tool that fits naturally into data analysis workflows.

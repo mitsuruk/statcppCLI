@@ -1,0 +1,5 @@
+if(EXISTS "/Users/mitsuruk/devs/@Projects/@Stat/statcppCLI/build-test/statcppcli_test[1]_tests.cmake")
+  include("/Users/mitsuruk/devs/@Projects/@Stat/statcppCLI/build-test/statcppcli_test[1]_tests.cmake")
+else()
+  add_test(statcppcli_test_NOT_BUILT statcppcli_test_NOT_BUILT)
+endif()

@@ -1,5 +1,8 @@
 # statcpp CLI テストリファレンス
 
+> **注意:** このドキュメントのシェル例は bash 構文を使用しており,macOS と Linux で動作します.
+> Windows では単体テスト(`cmake -DGTEST=true`)はサポートされています.E2E テスト(`run_e2e.sh`)を実行するには bash 環境(Git Bash または WSL)が必要です.
+
 基本書式:
 
 ```text

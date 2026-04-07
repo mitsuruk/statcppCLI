@@ -1,5 +1,8 @@
 # statcpp CLI Test Reference
 
+> **Note:** The shell examples in this document use bash syntax and run on macOS and Linux.
+> On Windows, unit tests (`cmake -DGTEST=true`) are supported; E2E tests (`run_e2e.sh`) require bash (Git Bash or WSL).
+
 Basic syntax:
 
 ```text

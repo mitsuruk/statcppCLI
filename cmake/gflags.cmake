@@ -9,7 +9,7 @@
 # Download directory: ${CMAKE_CURRENT_SOURCE_DIR}/download/gflags
 # Install directory:  ${CMAKE_CURRENT_SOURCE_DIR}/download/gflags-install
 #
-# - If gflags-install/lib/libgflags.a already exists, skip download and build.
+# - If gflags-install/lib/cmake/gflags/gflags-config.cmake already exists, skip download and build.
 # - If download/gflags/CMakeLists.txt already exists, skip download (reuse cache).
 # - Otherwise, download from GitHub, configure with CMake, build, and install.
 #
@@ -36,8 +36,8 @@ message(STATUS "GFLAGS_INSTALL_DIR = ${GFLAGS_INSTALL_DIR}")
 # =============================================================================
 # gflags Library: Download, Build, and Install (cached in download/ directory)
 # =============================================================================
-if(EXISTS ${GFLAGS_INSTALL_DIR}/lib/libgflags.a)
-    message(STATUS "gflags already built: ${GFLAGS_INSTALL_DIR}/lib/libgflags.a")
+if(EXISTS ${GFLAGS_INSTALL_DIR}/lib/cmake/gflags/gflags-config.cmake)
+    message(STATUS "gflags already built: ${GFLAGS_INSTALL_DIR}/lib/cmake/gflags/gflags-config.cmake")
 else()
     # --- Download (skip if source already cached) ---
     if(EXISTS ${GFLAGS_SOURCE_DIR}/CMakeLists.txt)
@@ -93,8 +93,20 @@ else()
     # --- Configure (CMake) ---
     message(STATUS "Configuring gflags with CMake ...")
     file(MAKE_DIRECTORY ${GFLAGS_BUILD_DIR})
+
+    # ジェネレータ引数リストを構築(-A オプションは Visual Studio のみ有効)
+    set(GFLAGS_CMAKE_GENERATOR_ARGS
+        -G "${CMAKE_GENERATOR}"
+    )
+    if(CMAKE_GENERATOR_PLATFORM)
+        list(APPEND GFLAGS_CMAKE_GENERATOR_ARGS
+            -A "${CMAKE_GENERATOR_PLATFORM}"
+        )
+    endif()
+
     execute_process(
         COMMAND ${CMAKE_COMMAND}
+                ${GFLAGS_CMAKE_GENERATOR_ARGS}
                 -DCMAKE_INSTALL_PREFIX=${GFLAGS_INSTALL_DIR}
                 -DBUILD_SHARED_LIBS=OFF
                 -DBUILD_STATIC_LIBS=ON

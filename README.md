@@ -4,10 +4,11 @@
 [![Docs](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://mitsuruk.github.io/statcppCLI/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
-[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/tests-49%20e2e-brightgreen.svg)](https://github.com/mitsuruk/statcppCLI/actions/workflows/ci.yml)
 
 **Bring statistics to your UNIX pipeline.**
+*Also runs on Windows (MSVC / MinGW)*
 
 [日本語版 / Japanese](README-ja.md)
 
@@ -34,6 +35,17 @@ cmake -B build && cmake --build build
 
 Built binary: `build/statcpp`
 
+**Windows (MSVC):**
+
+```bat
+git clone <repository-url>
+cd statcppCLI
+cmake -S . -B build
+cmake --build build --config Release
+```
+
+Built binary: `build\Release\statcpp.exe`
+
 ### Install
 
 ```bash
@@ -44,10 +56,16 @@ sudo cmake --install build
 cmake --install build --prefix ~/.local
 ```
 
+**Windows:**
+
+```bat
+cmake --install build --config Release --prefix C:\Users\<user>\AppData\Local\statcpp
+```
+
 ### Prerequisites
 
 - CMake 3.20+
-- C++17 compatible compiler (GCC 9+, Clang 10+, Apple Clang 12+)
+- C++17 compatible compiler (GCC 9+, Clang 10+, Apple Clang 12+, MSVC 2019+)
 
 statcpp, gflags, and nlohmann/json are automatically downloaded by CMake.
 
@@ -137,10 +155,10 @@ Shortcuts: `mean`, `median`, `mode`, `sd`, `var`, `summary`, `range`, `iqr`, `cv
 # Unit tests
 cmake -B build -DGTEST=true && cmake --build build && ctest --test-dir build --verbose
 
-# E2E tests
+# E2E tests (macOS / Linux only)
 cd test/e2e && bash run_e2e.sh
 
-# Verify all reference examples
+# Verify all reference examples (macOS / Linux only)
 bash docs/run_reference.sh
 ```
 
@@ -149,6 +167,7 @@ bash docs/run_reference.sh
 - macOS + Apple Clang 17.0.0
 - macOS + GCC 15 (Homebrew)
 - Ubuntu 24.04 ARM64 + GCC 13.3.0
+- Windows 11 ARM64 + MSVC 2022 (via Parallels)
 
 ## License
 
