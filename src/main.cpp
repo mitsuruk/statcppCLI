@@ -127,6 +127,16 @@ static const char* kUsageMessage =
  * @return 0 on success, 1 on error.
  */
 int main(int argc, char* argv[]) {
+    // Intercept --help/-h before gflags to show only the custom usage message.
+    // gflags' built-in --help exposes internal flags and absolute source paths.
+    for (int i = 1; i < argc; ++i) {
+        const std::string arg = argv[i];
+        if (arg == "--help" || arg == "-help" || arg == "-h") {
+            std::cout << kUsageMessage << std::endl;
+            return 0;
+        }
+    }
+
     gflags::SetUsageMessage(kUsageMessage);
     gflags::SetVersionString(PROJECT_VERSION);
     gflags::ParseCommandLineFlags(&argc, &argv, true);
